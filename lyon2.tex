@@ -1,0 +1,130 @@
+\documentclass[xcolor=dvipsnames, 12, c, usepdftitle=false]{beamer}
+% \documentclass{beamer}
+
+\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage{default}
+
+\usetheme{Warsaw}
+% \usetheme{PaloAlto}
+%\usecolortheme[named=BurntOrange]
+
+\title[JJCR \& GDR Robotique '14]{Retour sur JJCR \& GdR Robotique 2014}
+% \title{JJCR \& GdR Robotique 2014}
+% \author[A. Harnist]{Antony Harnist \\ \texttt{antony.harnist@grenoble-inp.gipsa-lab.fr}}
+\author[A. Harnist]{Antony Harnist}
+\institute[GIPSA-lab]{Grenoble Images Parole Signal Automatique}
+\date[18/11/2014]{Mardi 18 Novembre 2014}
+% \date{\today}
+%\email{antony.harnist@grenoble-inp.gipsa-lab.fr}
+
+% \section{Section 1}
+% \subsection{Sous section 1 de la Section 1}
+  % \begin{frame}
+    % Ma première page !
+  % \end{frame}
+% \subsection{Sous section 2 de la Section 1}
+  % \begin{frame}
+    % Et maintenant ma deuxième page !
+  % \end{frame}
+% 
+% \section{Section 2}
+% \subsection{Sous section 1 de la Section 2}
+  % \begin{frame}
+    % Voici ma troisième page, elle appartient à ma deuxième section ! :) 
+  % \end{frame}
+% \subsection{Sous section 2 de la Section 2}
+  % \begin{frame}
+    % Et celle là c'est la deuxième page, mais de ma deuxième section. 
+  % \end{frame}
+ 
+%%%%%%%%%%%%%%%%%%%%%
+% Guillaume Tréhard : Localisation et Cartographie Simultanées et Crédibiliste
+%	Utilisation de grille; lidar -> grille polaire en forme de cône; modification carte polaire en coordonées cartésiennes; matching de la carte(t_{k-1}) avec carte(t_{k}); suppression des conflits
+%
+%%%%%%%%%%%%%%%%%%%%%
+% Louis-Charles Caron : RGB-D object recognition for segmantic mapping
+%	apprentissage des objets très supervisé; utilisatiion de détecteur de texture (SIFT),
+%								 détecteurs de couleurs (HSV (utilisation de l'histogramme de la teinte) et RGB (utilisation et normalisation de l'histogramme)), 
+%								 détecteur de forme.
+%	Utilisations des différents détecteurs en entré d'un réseau de neuronnes artificiels qui en sortie retourne une/deux classes.
+%	Segmentation de ce qui est percu par la caméra.
+%	Effectue un moyennage des différents scores pour des objets superposés sur la carte!
+%%%%%%%%%%%%%%%%%%%%%
+% Gilles Tagne : Planification de trajectoires et commande pour la navigation des véhicules autonomes (POSTER)
+% 	Méthode des tentacules. Permet d'effectuer le suivi d'une personne de manière plus fuide 
+
+	 
+\begin{document}
+
+\begin{frame}
+\maketitle			% équivalent à \titlepage 
+\end{frame}
+
+\begin{frame}[c, label=G. Trehard]
+  \frametitle{Localisation et Cartographie Simultanées et Crédibiliste}
+  \framesubtitle{Guillaume Tréhard}
+  Catégorie : Cartographie. \\
+  Méthode : Théorie des croyances.\\
+
+  \begin{itemize}
+    \item Utilisation de grille;
+    \item Lidar -> grille polaire;
+    \item Transformation grille polaire en coordonnées cartésiennes;
+    \item Matching de la carte($t_{k-1}$) avec carte($t_{k}$);
+    \item Suppression des conflits.
+  \end{itemize}
+\end{frame}
+ 
+\begin{frame}[c, label=LC. Caron]
+  \frametitle{RGB-D object recognition for segmantic mapping}
+  \framesubtitle{Louis-Charles Caron}
+  Catégorie : Cartographie et classification.\\
+  Méthode : Réseau de neurones artificiels.\\
+  Utilisation de multiples descripteurs:
+      \begin{itemize}
+	  \item Descripteur de texture (SIFT);
+	  \item Descripteur de couleurs: histogramme de la teinte, histogramme normalisé RGB; 
+	  \item Descripteur de formes;
+      \end{itemize}
+  Utilisations d'un réseau de neuronnes artificiels.\\
+  Ségmentation.\\
+  Effectue un moyennage des différents scores pour des objets superposés sur la carte!
+\end{frame}
+
+
+\begin{frame}[c, label=G. Tagne]
+  \frametitle{Planification de la trajectoire et commande pour la navigation des véhicules autonomes (poster)}
+  \framesubtitle{Gilles Tagne}
+  Catégorie : Cartographie\\
+  Méthode des tentacules
+\end{frame}
+
+% \begin{frame}
+%   \tableofcontents
+% \end{frame}
+
+% \begin{frame}[label=slideTitre] 	%[c|t|b] center, top bottom align
+% 					%[plain] suppress headlines, footlines and sidebars. Usefull to show large pictures
+% 					%[allowframebreaks] permet de séparer un slide en deux si trop grand
+% 
+%   \frametitle{Récapitulatif JJCR et GdR Robotique 2014}
+%   \framesubtitle{exemple de sous-tittre}
+%   Corps du slide
+% \end{frame}
+% 
+
+
+% 
+% \begin{frame}
+
+%   \begin{itemize}
+%     \item Language used by Beamer: L\uncover<2->{A}TEX
+%     \item Language used by Beamer: L\only<2->{A}TEX
+%   \end{itemize}
+% \end{frame}
+
+
+\end{document}
