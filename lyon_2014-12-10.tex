@@ -7,19 +7,14 @@
 \usepackage{amssymb, amsmath}
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
-%\usepackage{time}
 \usefonttheme{professionalfonts}
-
-
+\usetheme{Warsaw}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}[frame number]
+\beamertemplatenavigationsymbolsempty       %\setbeamertemplate{navigation symbols}{}
 
 %\usepackage[]{beamerthemegipsa} % options: nogradient nobackground
 %\usetheme{Gipsa}
-\usetheme{Warsaw}
-\beamertemplatenavigationsymbolsempty		%\setbeamertemplate{navigation symbols}{}
-
-%\setbeamerfont{page number in head/foot}{size=\large}
-\setbeamertemplate{headline}{}
-\setbeamertemplate{footline}[frame number]
 
 % \title[Robots compagnons]{Surveillances de personnes en situation de fragilité par une équipe de robots compagnons}
 % \author[Antony HARNIST]{\Large Antony HARNIST }% \\\small \textbf{antony.harnist@gipsa-lab.grenoble-inp.fr}}
@@ -33,7 +28,7 @@
 % % \logo{\includegraphics[height=1cm]{../images/logoListic.png} ~ \includegraphics[height=1cm]{../images/logo-gipsa-bas-BD.jpg}}
 % % \date[10/12/2014]{Mercredi 10 Décembre 2014}
 
-\title{\Large \textbf{Surveillances de personnes en situation de fragilité par une équipe de robots compagnons}}
+\title[ARC6 : Robots compagnons]{\Large \textbf{Surveillances de personnes en situation de fragilité par une équipe de robots compagnons}}
 \author{\Large \textbf{Antony HARNIST}\\ \small antony.harnist@gipsa-lab.grenoble-inp.fr\\ \vspace{1cm}
 Encadrement: \textbf{Michèle ROMBAUT} et \textbf{Didier COQUIN}}
 \institute{\Large \textbf{GIPSA}\normalsize-lab et \Large \textbf{LISTIC} }
@@ -45,58 +40,58 @@ Encadrement: \textbf{Michèle ROMBAUT} et \textbf{Didier COQUIN}}
 
 %%%%%%%%%%%%%%%% Diapo Titre
 \begin{frame}[label=titre]   %[plain]
-  \titlepage    %\maketitle
-\end{frame}
+\titlepage    %\maketitle
+\end{frame} 
 
 % \begin{frame}
-%     %\frametitle{Sommaire}
+%     \frametitle{Sommaire}
 %     \tableofcontents%[currentsection] %currentsubsection,hideallsubsections,hideothersubsections,pausesections,pausesubsections
 % \end{frame}
 
 % \AtBeginSection[]{
-%   \frame{
-% %     \frametitle{}
-%     \tableofcontents[currentsection, hideothersubsections, pausesubsections]
-%   }
+%     \frame{
+%         \frametitle{}
+%         \tableofcontents[currentsection, hideothersubsections, pausesubsections]
+%     }
 % }
 
 \section{Laboratoires}
 \begin{frame}[label=laboratoires]
-  \frametitle{Laboratoires} % / Institutions}
-  \textbf{GIPSA}-lab, équipe AGPIG \\
-  (Architecture-Géométrie, Perception, Images, Gestures)\\
-  11 Rue des Mathématiques, BP46, 38402 Saint Martin d’Hères\\
-  Michèle ROMBAUT	\small(michele.rombaut@gipsa-lab.grenoble-inp.fr)\\
-  \vspace{2em}
-  \textbf{LISTIC}, équipe FIAD \\
-  (Fusion d'Informations pour l'Aide à la Décision)\\
-  5 Chemin de Bellevue, BP 80439, 74944 Annecy-le-Vieux Cedex\\
-  Didier COQUIN	\small(didier.coquin@univ-savoie.fr)\\
+\frametitle{Laboratoires} % / Institutions}
+\textbf{GIPSA}-lab, équipe AGPIG \\
+(Architecture-Géométrie, Perception, Images, Gestures)\\
+11 Rue des Mathématiques, BP46, 38402 Saint Martin d’Hères\\
+Michèle ROMBAUT	\small(michele.rombaut@gipsa-lab.grenoble-inp.fr)\\
+\vspace{2em}
+\textbf{LISTIC}, équipe FIAD \\
+(Fusion d'Informations pour l'Aide à la Décision)\\
+5 Chemin de Bellevue, BP 80439, 74944 Annecy-le-Vieux Cedex\\
+Didier COQUIN	\small(didier.coquin@univ-savoie.fr)\\
 \end{frame} 
 
 
 \section{Objectifs}
 \begin{frame}[label=objectifs]
-  \frametitle{Objectifs}
-  Architecture multi-robots pour l'analyse de la situation d'une personne.\\
-  Ensemble de robots vu comme un système de perception multi-capteurs adaptable.\\
+\frametitle{Objectifs}
+Architecture multi-robots pour l'analyse de la situation d'une personne.\\
+Ensemble de robots vu comme un système de perception multi-capteurs adaptable.\\
 \end{frame}
 
 \subsection{Contexte}
 \begin{frame}[label=objContexte]
-  \frametitle{Objectifs}
-  Contexte
-  \begin{itemize}
-      \item[] personnes en environnement intérieur;
-      \item[] analyse de la situation $\rightarrow$ pas d'intéraction;
-      \item[] ne pas gêner la personne;
-  \end{itemize}
+\frametitle{Objectifs}
+Contexte
+\begin{itemize}
+    \item[] personnes en environnement intérieur;
+    \item[] analyse de la situation $\rightarrow$ pas d'intéraction;
+    \item[] ne pas gêner la personne;
+\end{itemize}
 \end{frame}
 
 \subsection{Sorties}
 \begin{frame}[label=objSorties]
-  Objectifs
-  \framesubtitle{Sorties : situation de la personne}
+\frametitle{Objectifs}
+Sorties : situation de la personne
     \begin{itemize}
         \item[] localisation dans un carte dynamique;
         \item[] situation physique (debout, assise, etc.);
@@ -106,13 +101,13 @@ Encadrement: \textbf{Michèle ROMBAUT} et \textbf{Didier COQUIN}}
 
 \subsection{Multi-robots}
 \begin{frame}[label=objMultirobots]
-  \frametitle{Objectifs}
+\frametitle{Objectifs}
     Mulit-robots : augmentation des capacités perceptuelles
     \begin{itemize}
         \item[] nécessité d'une coopération;
     \end{itemize}
     \begin{figure}[p]
-      \includegraphics[height=2cm]{nao.jpg} ~~~~ \includegraphics[height=2cm]{qbo_xtion.jpg}
+        \includegraphics[height=2cm]{nao.jpg} ~~~~ \includegraphics[height=2cm]{qbo_xtion.jpg}
     \end{figure}
 \end{frame}
 
@@ -125,33 +120,33 @@ Encadrement: \textbf{Michèle ROMBAUT} et \textbf{Didier COQUIN}}
 
 
 % 
- \section{Problématiques scientifiques}
-\begin{frame}
-  \frametitle{Problématiques scientifiques}
-  \begin{itemize}
+\section{Problématiques scientifiques}
+\begin{frame}[label=pbScientifiques]
+\frametitle{Problématiques scientifiques}
+\begin{itemize}
     \item fusion d'informations provenant des systèmes de perception des robots;
     \item communication entre robots ; protocole + message transmis;
     \item stratégie de déplacement des robots pour accroître la connaissance sur la situation;
     \item modélisation de la situation;
-   \end{itemize}
+\end{itemize}
 \end{frame}
 
- \section{Les pistes de recherches}
-\begin{frame}
-  \frametitle{Les pistes de recherches}
-  \begin{itemize}
-   \item fusion d'informations 
-   \begin{itemize}
-     \item[] hétérogènes (sons, images, images de profondeur), connaissances a priori, incertaines, incomplètes ou absentes.
-   \end{itemize}
-   \item détection et analyse du comportement de personnes 
-   \item stratégie de déplacement des robots (améliorer la perception)
-   \item modélisation de la situation
-   \begin{itemize}
-     \item[] cartes statiques/dynamiques, évolutives, ect.
-   \end{itemize}
-   \item informations à échanger ou partager
-  \end{itemize}
+\section{Les pistes de recherches}
+\begin{frame}[label=pistesRecherches]
+\frametitle{Les pistes de recherches}
+    \begin{itemize}
+        \item fusion d'informations 
+        \begin{itemize}
+            \item[] hétérogènes (sons, images, images de profondeur), connaissances a priori, incertaines, incomplètes ou absentes.
+        \end{itemize}
+        \item détection et analyse du comportement de personnes 
+        \item stratégie de déplacement des robots (améliorer la perception)
+        \item modélisation de la situation
+        \begin{itemize}
+            item[] cartes statiques/dynamiques, évolutives, ect.
+        \end{itemize}
+        \item informations à échanger ou partager
+    \end{itemize}
 \end{frame}
 
 \end{document}
