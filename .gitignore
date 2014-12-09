@@ -56,3 +56,4 @@ BeamerGIPSA/
 .gitignore[0-9]
 .lyon2.tex
 lyon2.tecs
+*.backup

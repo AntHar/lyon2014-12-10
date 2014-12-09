@@ -1,4 +1,4 @@
-\documentclass[usepdftitle=false, xcolor=dvipsnames, 12, c]{beamer}
+\documentclass[usepdftitle=false, xcolor=dvipsnames, 12, c]{beamer} %
 %\usepackage{} %=dvipsnames, 12, c, usepdftitle=false]{beamer}
 
 \usepackage[utf8]{inputenc}
@@ -9,39 +9,35 @@
 \graphicspath{ {./images/} }
 \usefonttheme{professionalfonts}
 \usetheme{Warsaw}
-\setbeamertemplate{headline}{}
-\setbeamertemplate{footline}[frame number]
-\beamertemplatenavigationsymbolsempty       %\setbeamertemplate{navigation symbols}{}
-
+\expandafter\def\expandafter\insertshorttitle\expandafter{\insertshorttitle\hfill\insertframenumber}%\,/\,\inserttotalframenumber}
+%\usecolortheme{dolphin}
+%\setbeamertemplate{headline}{}
+%\setbeamertemplate{footline}[frame number]
+\beamertemplatenavigationsymbolsempty       % ou \setbeamertemplate{navigation symbols}{}
+%\definecolor{orange}{RGB}{255,127,0} %exemple couleur    utilisation     \textcolor{nom_couleur}{texte en couleur}
 %\usepackage[]{beamerthemegipsa} % options: nogradient nobackground
 %\usetheme{Gipsa}
 
-% \title[Robots compagnons]{Surveillances de personnes en situation de fragilité par une équipe de robots compagnons}
-% \author[Antony HARNIST]{\Large Antony HARNIST }% \\\small \textbf{antony.harnist@gipsa-lab.grenoble-inp.fr}}
-% % %\institute{\Large\textbf{GIPSA}-lab \\% \titlegraphic{\includegraphics{../logo/logo-gipsa-bas-BD.jpg}}\\
-% % % \normalsize 11 rue des Mathématiques, F-38420, Grenoble\\
-% % % \vspace{1em}
-% % % \Large\textbf{LISTIC} \\% \titlegraphic{\includegraphics{../logo/logoListic.png}}\\
-% % % \normalsize 5 Chemin de Bellevue, F-74944, Annecy-le-Vieux\\
-% % % %\titlegraphic{\includegraphics{logoListic.png} \includegraphics{logo-gipsa-bas-BD.jpg}}
-% % \institute{\Large \textbf{LISTIC} \& \Large \textbf{gipsa}-lab \normalsize}
-% % \logo{\includegraphics[height=1cm]{../images/logoListic.png} ~ \includegraphics[height=1cm]{../images/logo-gipsa-bas-BD.jpg}}
-% % \date[10/12/2014]{Mercredi 10 Décembre 2014}
-
 \title[ARC6 : Robots compagnons]{\Large \textbf{Surveillances de personnes en situation de fragilité par une équipe de robots compagnons}}
-\author{\Large \textbf{Antony HARNIST}\\ \small antony.harnist@gipsa-lab.grenoble-inp.fr\\ \vspace{1cm}
+\author[Antony Harnist]{\Large \textbf{Antony HARNIST}\\ \small antony.harnist@gipsa-lab.grenoble-inp.fr\\ \vspace{1cm}
 Encadrement: \textbf{Michèle ROMBAUT} et \textbf{Didier COQUIN}}
 \institute{\Large \textbf{GIPSA}\normalsize-lab et \Large \textbf{LISTIC} }
 \logo{\includegraphics[height=15mm]{logoListic.png} ~ \includegraphics[height=15mm]{logo-gipsa-bas-BD.jpg}}
 \date[10/12/2014]{Mercredi 10 Décembre 2014}
 
-%%%%%%%%%%%%%%%% Début du document
+
+% pour pllus d'info : http://tex.stackexchange.com/questions/82794/removing-page-number-from-title-frame-without-changing-the-theme
+\let\otp\titlepage
+\renewcommand{\titlepage}{\otp\addtocounter{framenumber}{-1}}
+
+
 \begin{document}
 
 %%%%%%%%%%%%%%%% Diapo Titre
-\begin{frame}[label=titre]   %[plain]
-\titlepage    %\maketitle
+\begin{frame}[plain, label=titre]   %[plain]
+    \maketitle    %\titlepage    %
 \end{frame} 
+
 
 % \begin{frame}
 %     \frametitle{Sommaire}
@@ -57,41 +53,48 @@ Encadrement: \textbf{Michèle ROMBAUT} et \textbf{Didier COQUIN}}
 
 \section{Laboratoires}
 \begin{frame}[label=laboratoires]
-\frametitle{Laboratoires} % / Institutions}
-\textbf{GIPSA}-lab, équipe AGPIG \\
-(Architecture-Géométrie, Perception, Images, Gestures)\\
-11 Rue des Mathématiques, BP46, 38402 Saint Martin d’Hères\\
-Michèle ROMBAUT	\small(michele.rombaut@gipsa-lab.grenoble-inp.fr)\\
-\vspace{2em}
-\textbf{LISTIC}, équipe FIAD \\
-(Fusion d'Informations pour l'Aide à la Décision)\\
-5 Chemin de Bellevue, BP 80439, 74944 Annecy-le-Vieux Cedex\\
-Didier COQUIN	\small(didier.coquin@univ-savoie.fr)\\
+    \frametitle{Laboratoires} % / Institutions}
+    \textbf{GIPSA}-lab, équipe AGPIG \\
+        (Architecture-Géométrie, Perception, Images, Gestures)\\
+        11 Rue des Mathématiques, BP46, 38402 Saint Martin d’Hères\\
+        Michèle ROMBAUT	\small(michele.rombaut@gipsa-lab.grenoble-inp.fr)\\
+    \vspace{2em}
+    \textbf{LISTIC}, équipe FIAD \\
+        (Fusion d'Informations pour l'Aide à la Décision)\\
+        5 Chemin de Bellevue, BP 80439, 74944 Annecy-le-Vieux Cedex\\
+        Didier COQUIN	\small(didier.coquin@univ-savoie.fr)\\
 \end{frame} 
 
 
+% \begin{frame}[label=objectifs, t]
+% \frametitle{Objectifs}
+% Architecture multi-robots pour l'analyse de la situation d'une personne.\\
+% Ensemble de robots vu comme un système de perception multi-capteurs adaptable.\\
+% \end{frame}
+
 \section{Objectifs}
-\begin{frame}[label=objectifs]
-\frametitle{Objectifs}
-Architecture multi-robots pour l'analyse de la situation d'une personne.\\
-Ensemble de robots vu comme un système de perception multi-capteurs adaptable.\\
-\end{frame}
-
 \subsection{Contexte}
-\begin{frame}[label=objContexte]
+\begin{frame}[label=objContexte, t]
 \frametitle{Objectifs}
-Contexte
-\begin{itemize}
-    \item[] personnes en environnement intérieur;
-    \item[] analyse de la situation $\rightarrow$ pas d'intéraction;
-    \item[] ne pas gêner la personne;
-\end{itemize}
+    Architecture multi-robots pour l'analyse de la situation d'une personne.\\
+    Ensemble de robots vu comme un système de perception multi-capteurs adaptable.\\
+    \vspace{1em}
+    Contexte
+    \begin{itemize}
+        \item[] personnes en environnement intérieur;
+        \item[] analyse de la situation $\rightarrow$ pas d'intéraction;
+        \item[] ne pas gêner la personne;
+    \end{itemize}
 \end{frame}
 
+\setcounter{framenumber}{1}
 \subsection{Sorties}
-\begin{frame}[label=objSorties]
+\begin{frame}[label=objSorties, t]
 \frametitle{Objectifs}
-Sorties : situation de la personne
+    Architecture multi-robots pour l'analyse de la situation d'une personne.\\
+    Ensemble de robots vu comme un système de perception multi-capteurs adaptable.\\
+    \vspace{1em}
+    Sorties : situation de la personne
     \begin{itemize}
         \item[] localisation dans un carte dynamique;
         \item[] situation physique (debout, assise, etc.);
@@ -99,10 +102,14 @@ Sorties : situation de la personne
     \end{itemize}
 \end{frame}
 
+\setcounter{framenumber}{1}
 \subsection{Multi-robots}
-\begin{frame}[label=objMultirobots]
+\begin{frame}[label=objMultirobots, t]
 \frametitle{Objectifs}
-    Mulit-robots : augmentation des capacités perceptuelles
+    Architecture multi-robots pour l'analyse de la situation d'une personne.\\
+    Ensemble de robots vu comme un système de perception multi-capteurs adaptable.\\
+    \vspace{1em}
+    Multi-robots : augmentation des capacités perceptuelles
     \begin{itemize}
         \item[] nécessité d'une coopération;
     \end{itemize}
@@ -122,6 +129,7 @@ Sorties : situation de la personne
 \end{itemize}
 \end{frame}
 
+
 \section{Les pistes de recherches}
 \begin{frame}[label=pistesRecherches]
 \frametitle{Les pistes de recherches}
@@ -134,10 +142,11 @@ Sorties : situation de la personne
         \item stratégie de déplacement des robots (améliorer la perception)
         \item modélisation de la situation
         \begin{itemize}
-            item[] cartes statiques/dynamiques, évolutives, ect.
+            \item[] cartes statiques/dynamiques, évolutives, ect.
         \end{itemize}
         \item informations à échanger ou partager
     \end{itemize}
 \end{frame}
+
 
 \end{document}
