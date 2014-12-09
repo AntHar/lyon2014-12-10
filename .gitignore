@@ -16,7 +16,7 @@
 # these rules might exclude image files for figures etc.
 # *.ps
 # *.eps
-# *.pdf
+*.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
@@ -54,4 +54,5 @@ images/
 BeamerGIPSA/
 
 .gitignore[0-9]
-
+.lyon2.tex
+lyon2.tecs
