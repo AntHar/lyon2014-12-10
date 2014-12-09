@@ -5,6 +5,8 @@
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{amssymb, amsmath}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
 %\usepackage{time}
 \usefonttheme{professionalfonts}
 
@@ -16,6 +18,7 @@
 \beamertemplatenavigationsymbolsempty		%\setbeamertemplate{navigation symbols}{}
 
 %\setbeamerfont{page number in head/foot}{size=\large}
+\setbeamertemplate{headline}{}
 \setbeamertemplate{footline}[frame number]
 
 % \title[Robots compagnons]{Surveillances de personnes en situation de fragilité par une équipe de robots compagnons}
@@ -39,17 +42,16 @@ Encadrement: \textbf{Michèle ROMBAUT} et \textbf{Didier COQUIN}}
 
 %%%%%%%%%%%%%%%% Début du document
 \begin{document}
-\setbeamertemplate{headline}{}
-\setbeamertemplate{footline}{}
+
 %%%%%%%%%%%%%%%% Diapo Titre
 \begin{frame}[label=titre]   %[plain]
   \titlepage    %\maketitle
 \end{frame}
 
-\begin{frame}
-    %\frametitle{Sommaire}
-    \tableofcontents%[currentsection] %currentsubsection,hideallsubsections,hideothersubsections,pausesections,pausesubsections
-\end{frame}
+% \begin{frame}
+%     %\frametitle{Sommaire}
+%     \tableofcontents%[currentsection] %currentsubsection,hideallsubsections,hideothersubsections,pausesections,pausesubsections
+% \end{frame}
 
 % \AtBeginSection[]{
 %   \frame{
@@ -83,35 +85,44 @@ Encadrement: \textbf{Michèle ROMBAUT} et \textbf{Didier COQUIN}}
 \subsection{Contexte}
 \begin{frame}[label=objContexte]
   \frametitle{Objectifs}
-  \framesubtitle{Contexte}
+  Contexte
   \begin{itemize}
-    \item personnes en environnement intérieur;
-    \item analyse de la situation $\rightarrow$ pas d'intéraction;
-    \item ne pas gêner la personne;
+      \item[] personnes en environnement intérieur;
+      \item[] analyse de la situation $\rightarrow$ pas d'intéraction;
+      \item[] ne pas gêner la personne;
   \end{itemize}
 \end{frame}
 
 \subsection{Sorties}
 \begin{frame}[label=objSorties]
-  \frametitle{Objectifs}
+  Objectifs
   \framesubtitle{Sorties : situation de la personne}
     \begin{itemize}
-      \item localisation dans un carte dynamique;
-      \item situation physique (debout, assise, etc.);
-      \item situation comportementale (marche, parle, regarde la télévision, etc.);
+        \item[] localisation dans un carte dynamique;
+        \item[] situation physique (debout, assise, etc.);
+        \item[] situation comportementale (marche, parle, regarde la télévision, etc.);
     \end{itemize}
 \end{frame}
 
 \subsection{Multi-robots}
 \begin{frame}[label=objMultirobots]
   \frametitle{Objectifs}
-  \framesubtitle{Sorties : situation de la personne}
-%   Mulit-robots : augmentation des capacités perceptuelles
+    Mulit-robots : augmentation des capacités perceptuelles
     \begin{itemize}
-      \item nécessité d'une coopération;
+        \item[] nécessité d'une coopération;
     \end{itemize}
-%     \incluldegraphics[height=2cm]{nao.jpg} ~~~ \incluldegraphics[height=2cm]{qbo+xtion.jpg}
+    \begin{figure}[p]
+      \includegraphics[height=2cm]{nao.jpg} ~~~~ \includegraphics[height=2cm]{qbo_xtion.jpg}
+    \end{figure}
 \end{frame}
+
+% \begin{frame}
+%   \begin{figure}
+%     \incluldegraphics[height=200]{nao.jpg}
+%     \includegraphics[height=200]{poulpy.png}
+%   \end{figure}
+% \end{frame}
+
 
 % 
  \section{Problématiques scientifiques}
@@ -143,22 +154,4 @@ Encadrement: \textbf{Michèle ROMBAUT} et \textbf{Didier COQUIN}}
   \end{itemize}
 \end{frame}
 
-% \begin{frame}
-%   \frametitle{Les robots}
-%   \begin{itemize}
-%     \item capteurs intelligents mobiles;
-%     \item améliorer la perception de la situation en déplaçant;
-%     \item détecter la personne et analyser sa situation (posture, expression du visage, analise des gestes, analyse de l’intonation, ...);
-%     \item transfert les informations à un personnel médical dans le cas échéant;
-%     \item mettre en contact le patient avec son entourage ou son médecin.
-%   \end{itemize}
-% \end{frame}
-% 
-% \begin{frame}
-% \frametitle{Robots}
-%   \begin{itemize}
-%     \item Nao (4 micros, 2 caméras, capteurs sensoriels)
-%     \item Qbo (2 micros, 1-2 caméras, ajout d’une caméra RGB-D). 
-%   \end{itemize}
-% \end{frame}
 \end{document}

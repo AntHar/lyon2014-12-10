@@ -1,20 +1,19 @@
-filename=$(basename $(wildcard *.tex))
+TEX := $(basename $(wildcard *.tex))
+#TEX = paper
 
-#filename=lyon_2014-12-10
-
-filename : $(filename).tex
-#    pdflafilename $(filename)
-#    bibfilename $(filename)||true
-#    pdflafilename $(filename)
-#    pdflafilename $(filename)
-	latex $(filename)
-	bibtex $(filename)||true
-	latex $(filename)
-	latex $(filename)
+TEX : $(TEX).bib $(TEX).tex
+#    pdflatex $(TEX)
+#    bibtex $(TEX)||true
+#    pdflatex $(TEX)
+#    pdflatex $(TEX)
+    pdflatex $(TEX)
+    bibtex $(TEX)||true
+    pdflatex $(TEX)
+    pdflatex $(TEX)
 
 clean:
-#    rm -f $(filename).aux $(filename).bbl $(filename).blg $(filename).dvi $(filename).fdb_lafilenamemk $(filename).log $(filename).pdf missfont.log
-	rm -f ${filename}.{aux,bbl,blg,dvi,log,out,pdf,ps}
+#    rm -f $(TEX).aux $(TEX).bbl $(TEX).blg $(TEX).dvi $(TEX).fdb_latexmk $(TEX).log $(TEX).pdf missfont.log
+    rm -f ${TEX}.{aux,bbl,blg,dvi,log,out,pdf,ps}
 
 fresh:
-	make clean && make
+make clean && make
